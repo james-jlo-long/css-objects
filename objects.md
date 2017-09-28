@@ -17,6 +17,8 @@ A final point before I show these objects is that there is no grid system here. 
 
 ### Box
 
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/box.css)_
+
 A box just squares off content. It removes the top margin from the first child and the bottom margin from the last child so keep the spacing around the content consistent.
 
 The box object also has a "lip" which sits over the padding in the box, allowing us to create borders or backgrounds that stretch the full width.
@@ -68,6 +70,8 @@ When modifying this object, make sure that the lip's `padding-left` and `padding
 
 
 ### Centre
+
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/centre.css)_
 
 This is more of a collection of similar objects rather than a single, tweakable, one. The centre objects just centre the content, either vertically, horizontally or in both directions.
 
@@ -159,6 +163,8 @@ A slight variant of [Centre](#centre) is Centred. This object aligns itself rath
 
 ### Clearfix
 
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/clearfix.css)_
+
 I rarely use this object anymore because [Pack](#pack) and [Waffle](#waffle) can achieve better results, but I've included the clearfix here for reference. Clearfix will correct a container so that it wraps around floated children.
 
 ```css
@@ -183,6 +189,8 @@ I rarely use this object anymore because [Pack](#pack) and [Waffle](#waffle) can
 
 
 ### List Bare
+
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/list-bare.css)_
 
 The list bare object just removes the list styling from a list.
 
@@ -210,6 +218,8 @@ The `o-list-bare__item` class isn't always necessary, but I've found a few situa
 
 
 ### Media
+
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/media.css)_
 
 The media object lays text next to an image. Unlike [Pack](#pack), Media is designed for elements of different size. The idea is that the text fills all the space left over by the image. In this example, the text is also vertically aligned to the centre of the image but the image and text will appear to be aligned to the top if the text is taller than the image.
 
@@ -249,6 +259,8 @@ The most useful part of the media object is that the left and right parts are op
 
 ### Pack
 
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/pack.css)_
+
 The pack object lines elements next to each other horizontally while also giving some control over the spacing between the elements. Left margin of the first child and right margin of the last child are removed so that the elements touch the edge of the parent.
 
 Pack can have any number of children. To vertically stack elements, use the [Stack](#stack) object.
@@ -286,6 +298,8 @@ Pack can have any number of children. To vertically stack elements, use the [Sta
 
 ### Ratio
 
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/ratio.css)_
+
 As the name suggests, the ratio object keeps things at a set aspect ratio. It's really useful for videos or scalable logos.
 
 ```css
@@ -317,6 +331,8 @@ There are 2 tricks with this object.
 
 
 ### Stack
+
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/stack.css)_
 
 Used for vertically stacking elements, one on top of the other. Although most elements do this automatically, it can be very handy to have control over things like the element spacing. (Setting the spacing to 0 will have the items touching each other.)
 
@@ -350,6 +366,8 @@ The Stack object doesn't set any `margin-top` so doesn't need to clear it from t
 
 
 ### Waffle
+
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/waffle.css)_
 
 Waffles lay out elements of the same width in a grid pattern. They create a consistent space between the elements but appear to remove the space around the elements out the outside, possibly allowing them to touch the edge of the container. This is a very useful object for laying out product thumbnails.
 

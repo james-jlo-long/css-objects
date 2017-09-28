@@ -1,5 +1,2 @@
-# Ignore compiled folder
-compiled/
-
 # Ignore download folders
 node_modules/
