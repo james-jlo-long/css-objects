@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstration of CSS Objects</title>
+
+<style>
+/*
+Just some basic styles to make the objects easier to visualise.
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.text {
+    background-color: pink;
+}
+
+.text--nm {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.text--nm + .text--nm {
+    margin-top: 1em;
+}
+
+.pic {
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+}
+
+.box {
+    border: 1px solid #000;
+    margin-bottom: 1em;
+}
+
+.box--fixed {
+    height: 150px;
+    width: 150px;
+}
+
+.u-fg {
+    flex-grow: 1;
+}
+
+.u-fl {
+    float: left;
+}
+
+
+/* ==========================================================================
+   #BOX OBJECT
+   ========================================================================== */
+
+.o-box {
+    padding: 0.5em;
+}
+
+.o-box > :first-child {
+    margin-top: 0;
+}
+
+.o-box > :last-child {
+    margin-bottom: 0;
+}
+
+.o-box__lip {
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+
+/* ==========================================================================
+   #CENTRE OBJECT
+   ========================================================================== */
+
+/**
+ * 1. These are necessary to ensure that the "centre" element takes the full
+ *    width/height of the parent so the content can be correctly positioned.
+ */
+
+.o-centre-h,
+.o-centre-hv {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* [1] */
+}
+
+.o-centre-v,
+.o-centre-hv {
+    align-items: center;
+    display: flex;
+    height: 100%; /* [1] */
+}
+
+
+/* Centred Object
+   ========================================================================== */
+
+
+/**
+ * A variant that centres itself rather than its children. Although it's a
+ * separate object, it makes sense to combine it with the Centre object.
+ *
+ * 1. The "centre parent" contains any "centred" child.
+ * 2. There's currently no way of combining 2 transform values so we need to
+ *    manually replace the combined value.
+ */
+
+.o-centreParent {
+    position: relative; /* [1] */
+}
+
+.o-centred-h,
+.o-centred-hv {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.o-centred-v,
+.o-centred-hv {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.o-centred-hv {
+    transform: translate(-50%, -50%); /* [2] */
+}
+
+
+/* ==========================================================================
+   #CLEARFIX OBJECT
+   ========================================================================== */
+
+.o-clearfix::before,
+.o-clearfix::after {
+    content: "";
+    display: table;
+}
+
+.o-clearfix::after {
+    clear: both;
+}
+
+
+/* ==========================================================================
+   #LIST BARE OBJECT
+   ========================================================================== */
+
+/**
+ * 1. Prevents whitespace appearing around a block-level child.
+ */
+
+.o-list-bare {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.o-list-bare__item {
+    display: block; /* [1] */
+}
+
+
+/* ==========================================================================
+   #MEDIA OBJECT
+   ========================================================================== */
+
+.o-media {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.o-media__left {
+    align-self: flex-start;
+    margin-right: 0.5em;
+}
+
+.o-media__right {
+    align-self: flex-start;
+    margin-left: 0.5em;
+}
+
+.o-media__body {
+    align-self: center;
+    flex-grow: 1;
+}
+
+
+/* ==========================================================================
+   #PACK OBJECT
+   ========================================================================== */
+
+.o-pack {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.o-pack__item {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+.o-pack__item:first-child {
+    margin-left: 0;
+}
+
+.o-pack__item:last-child {
+    margin-right: 0;
+}
+
+
+/* ==========================================================================
+   #RATIO OBJECT
+   ========================================================================== */
+
+.o-ratio {
+    display: block;
+    padding-top: 100%;
+    position: relative;
+}
+
+.o-ratio--4\:3 {
+    padding-top: calc((3 / 4) * 100%);
+}
+
+.o-ratio--16\:9 {
+    padding-top: calc((9 / 16) * 100%);
+}
+
+.o-ratio--16\:10 {
+    padding-top: calc((10 / 16) * 100%);
+}
+
+.o-ratio__content {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   #STACK OBJECT
+   ========================================================================== */
+
+.o-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.o-stack__item {
+    margin-bottom: 0.5em;
+}
+
+.o-stack__item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   #WAFFLE OBJECT
+   ========================================================================== */
+
+.o-waffle {
+    display: flex;
+    flex-flow: row wrap;
+    margin: -0.25em;
+    width: calc(100% + 0.5em);
+}
+
+.o-waffle__item {
+    margin: 0.25em;
+    width: calc((100% / 4) - 0.5em);
+}
+</style>
+
+</head>
+<body>
+
+<h1 id="top">CSS Objects</h1>
+
+<ul>
+    <li><a href="#box">Box</a></li>
+    <li><a href="#centre">Centre</a></li>
+    <li><a href="#clearfix">Clearfix</a></li>
+    <li><a href="#list-bare">List Bare</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#pack">Pack</a></li>
+    <li><a href="#ratio">Ratio</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#waffle">Waffle</a></li>
+</ul>
+
+<section id="box">
+
+    <h2>Box</h2>
+
+    <div class="o-box box">
+        <p class="text">One</p>
+    </div>
+    <div class="o-box box">
+        <p class="text">One</p>
+        <p class="text">Two</p>
+    </div>
+    <div class="o-box box">
+        <p class="text">One</p>
+        <p class="text">Two</p>
+        <p class="text">Three</p>
+    </div>
+    <div class="o-box box">
+        <p class="text">One</p>
+        <p class="o-box__lip text">Two (with lip)</p>
+        <p class="text">Three</p>
+    </div>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+<section id="centre">
+
+    <h2>Centre</h2>
+
+    <ul class="o-list-bare o-pack">
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ]">
+            <div class="o-centre-h">
+                <p class="text">One</p>
+            </div>
+        </li>
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ]">
+            <div class="o-centre-v">
+                <p class="text">One</p>
+            </div>
+        </li>
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ]">
+            <div class="o-centre-hv">
+                <p class="text">One</p>
+            </div>
+        </li>
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ]">
+            <div class="o-centre-hv">
+                <div>
+                    <p class="text">One</p>
+                    <p class="text">Two</p>
+                    <p class="text">Three</p>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+    <h3>Centred</h3>
+
+    <ul class="o-list-bare o-pack">
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ] o-centreParent">
+            <div class="o-centred-h">
+                <p class="text">One</p>
+            </div>
+        </li>
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ] o-centreParent">
+            <div class="o-centred-v">
+                <p class="text">One</p>
+            </div>
+        </li>
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ] o-centreParent">
+            <div class="o-centred-hv">
+                <p class="text">One</p>
+            </div>
+        </li>
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ] o-centreParent">
+            <div class="o-centred-hv">
+                <div>
+                    <p class="text">One</p>
+                    <p class="text">Two</p>
+                    <p class="text">Three</p>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+<section id="clearfix">
+
+    <h2>Clearfix</h2>
+
+    <div class="o-clearfix box">
+        <div class="text u-fl">Floated left</div>
+        <div class="text u-fl">Floated left</div>
+        <div class="text u-fl">Floated left</div>
+    </div>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+<section id="list-bare">
+
+    <h2>List Bare</h2>
+
+    <ul class="o-list-bare">
+        <li class="o-list-bare__item">One</li>
+        <li class="o-list-bare__item">Two</li>
+        <li class="o-list-bare__item">Three</li>
+    </ul>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+<section id="media">
+
+    <h2>Media</h2>
+
+    <div class="o-media box">
+        <div class="o-media__left pic"></div>
+        <div class="o-media__body">
+            <p class="text text--nm">One</p>
+        </div>
+    </div>
+
+    <div class="o-media box">
+        <div class="o-media__left pic"></div>
+        <div class="o-media__body">
+            <p class="text text--nm">One</p>
+            <p class="text text--nm">Two</p>
+            <p class="text text--nm">Three</p>
+        </div>
+    </div>
+
+    <div class="o-media box">
+        <div class="o-media__body">
+            <p class="text text--nm">One</p>
+        </div>
+        <div class="o-media__right pic"></div>
+    </div>
+
+    <div class="o-media box">
+        <div class="o-media__left pic"></div>
+        <div class="o-media__body">
+            <p class="text text--nm">One</p>
+        </div>
+        <div class="o-media__right pic"></div>
+    </div>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+<section id="pack">
+
+    <h2>Pack</h2>
+
+    <div class="o-pack box">
+        <div class="o-pack__item text u-fg">One</div>
+        <div class="o-pack__item text u-fg">Two</div>
+        <div class="o-pack__item text u-fg">Three</div>
+    </div>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+<section id="ratio">
+
+    <h2>Ratio</h2>
+
+    <ul class="o-list-bare o-pack">
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ]">
+            <div class="o-ratio o-ratio--4:3">
+                <div class="o-ratio__content text">4:3</div>
+            </div>
+        </li>
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ]">
+            <div class="o-ratio o-ratio--16:9">
+                <div class="o-ratio__content text">16:9</div>
+            </div>
+        </li>
+
+        <li class="o-list-bare__item o-pack__item [ box box--fixed ]">
+            <div class="o-ratio o-ratio--16:10">
+                <div class="o-ratio__content text">16:10</div>
+            </div>
+        </li>
+
+    </ul>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+<section id="stack">
+
+    <h2>Stack</h2>
+
+    <div class="o-stack box">
+        <div class="o-stack__item text">One</div>
+        <div class="o-stack__item text">Two</div>
+        <div class="o-stack__item text">Three</div>
+    </div>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+<section id="waffle">
+
+    <h2>Waffle</h2>
+
+    <div class="box">
+        <div class="o-waffle">
+            <div class="o-waffle__item text">One</div>
+            <div class="o-waffle__item text">Two</div>
+            <div class="o-waffle__item text">Three</div>
+            <div class="o-waffle__item text">Four</div>
+            <div class="o-waffle__item text">Five</div>
+            <div class="o-waffle__item text">Six</div>
+            <div class="o-waffle__item text">Seven</div>
+            <div class="o-waffle__item text">Eight</div>
+            <div class="o-waffle__item text">Nine</div>
+            <div class="o-waffle__item text">Ten</div>
+            <div class="o-waffle__item text">Eleven</div>
+            <div class="o-waffle__item text">Twelve</div>
+        </div>
+    </div>
+
+    <p><a href="#top">Back to top</a></p>
+
+</section>
+
+</body>
+</html>

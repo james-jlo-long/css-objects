@@ -1,0 +1,40 @@
+$o-stack-spacing: 0.5em !default;
+
+/* ==========================================================================
+   #STACK OBJECT
+   ========================================================================== */
+
+
+/**
+ * Handles objects laid next to one ontop of another. A little like this
+ * (assuming # is an element):
+ *
+ *     +---+
+ *     | # |
+ *     | # |
+ *     | # |
+ *     +---+
+ *
+ *     <div class="o-stack">
+ *         <div class="o-stack__item">One</div>
+ *         <div class="o-stack__item">Two</div>
+ *         <div class="o-stack__item">Three</div>
+ *         <!-- ... -->
+ *     </div>
+ *
+ */
+
+.o-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.o-stack__item {
+
+    margin-bottom: $o-stack-spacing;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+}

@@ -1,0 +1,61 @@
+$o-ratio-ratios: (
+    (4:3),
+    (16:9),
+    (16:10)
+) !default;
+
+/* ==========================================================================
+   #RATIO OBJECT
+   ========================================================================== */
+
+
+/**
+ * Creates content with a set aspect ratio of width to height.
+ *
+ *    <div class="o-ratio">
+ *        <div class="o-ratio__content">Content</div>
+ *    </div>
+ *
+ * 1. Assume an aspect ratio of 1:1 by default.
+ */
+
+.o-ratio {
+    display: block;
+    padding-top: 100%; /* [1] */
+    position: relative;
+}
+
+.o-ratio__content {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+/* Example aspect ratios
+   ========================================================================== */
+
+
+/**
+ * Example usage:
+ *
+ *    <div class="o-ratio o-ratio--4:3">
+ *        <div class="o-ratio__content">4:3</div>
+ *    </div>
+ *
+ */
+
+
+@each $ratio in $o-ratio-ratios {
+
+    @each $antecedent, $consequent in $ratio {
+
+        .o-ratio--#{$antecedent}\:#{$consequent} {
+            padding-top: calc((#{$consequent} / #{$antecedent}) * 100%);
+        }
+
+    }
+
+}

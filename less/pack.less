@@ -1,0 +1,45 @@
+@o-pack-spacing: 0.5em;
+@o-pack-side-spacing: (@o-pack-spacing / 2);
+
+/* ==========================================================================
+   #PACK OBJECT
+   ========================================================================== */
+
+
+/**
+ * Handles objects laid next to one another. A little like this (assuming # is
+ * an element):
+ *
+ *     +-------+
+ *     | # # # |
+ *     +-------+
+ *
+ *     <div class="o-pack">
+ *         <div class="o-pack__item">One</div>
+ *         <div class="o-pack__item">Two</div>
+ *         <div class="o-pack__item">Three</div>
+ *         <!-- ... -->
+ *     </div>
+ *
+ */
+
+.o-pack {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.o-pack__item {
+
+    margin-left: @o-pack-side-spacing;
+    margin-right: @o-pack-side-spacing;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+}

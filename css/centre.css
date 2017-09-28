@@ -1,0 +1,91 @@
+/* ==========================================================================
+   #CENTRE OBJECT
+   ========================================================================== */
+
+
+/**
+ * Centres content either horizontally, vertically or in both directions.
+ *
+ *     <!-- Centred horizontally -->
+ *     <div class="o-centre-h">
+ *         <p>Content</p>
+ *     </div>
+ *
+ *     <!-- Centred vertically -->
+ *     <div class="o-centre-v">
+ *         <p>Content</p>
+ *     </div>
+ *
+ *     <!-- Centred horizontally and vertically -->
+ *     <div class="o-centre-hv">
+ *         <p>Content</p>
+ *     </div>
+ *
+ * 1. These are necessary to ensure that the "centre" element takes the full
+ *    width/height of the parent so the content can be correctly positioned.
+ */
+
+.o-centre-h,
+.o-centre-hv {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* [1] */
+}
+
+.o-centre-v,
+.o-centre-hv {
+    align-items: center;
+    display: flex;
+    height: 100%; /* [1] */
+}
+
+
+/* Centred Object
+   ========================================================================== */
+
+
+/**
+ * A variant that centres itself rather than its children. Although it's a
+ * separate object, it makes sense to combine it with the Centre object.
+ *
+ *     <!-- Centred horizontally -->
+ *     <div class="o-centreParent">
+ *         <p class="o-centre-h">Content</p>
+ *     </div>
+ *
+ *     <!-- Centred vertically -->
+ *     <div class="o-centreParent">
+ *         <p class="o-centre-v">Content</p>
+ *     </div>
+ *
+ *     <!-- Centred horizontally and vertically -->
+ *     <div class="o-centreParent">
+ *         <p class="o-centre-hv">Content</p>
+ *     </div>
+ *
+ * 1. The "centre parent" contains any "centred" child.
+ * 2. There's currently no way of combining 2 transform values so we need to
+ *    manually replace the combined value.
+ */
+
+.o-centreParent {
+    position: relative; /* [1] */
+}
+
+.o-centred-h,
+.o-centred-hv {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.o-centred-v,
+.o-centred-hv {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.o-centred-hv {
+    transform: translate(-50%, -50%); /* [2] */
+}

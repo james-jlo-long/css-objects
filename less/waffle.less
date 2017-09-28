@@ -1,0 +1,42 @@
+@o-waffle-spacing: 0.5em;
+@o-waffle-columns: 4;
+
+/* ==========================================================================
+   #WAFFLE OBJECT
+   ========================================================================== */
+
+
+/**
+ * Lays elements out in a grid-like pattern. This is intended to handle
+ * situations where the elements are the same width. A little like this
+ * (assuming # is an element):
+ *
+ *     +-----+
+ *     | # # |
+ *     | # # |
+ *     +-----+
+ *
+ *     <div class="o-waffle">
+ *         <div class="o-waffle__item">One</div>
+ *         <div class="o-waffle__item">Two</div>
+ *         <div class="o-waffle__item">Three</div>
+ *         <!-- ... -->
+ *     </div>
+ *
+ * 1. Make sure that these two values are the same, although the parent value
+ *    should be negative.
+ * 2. Make sure these values are double the value mentioned in [1].
+ * 3. Assume 4 columns by default.
+ */
+
+.o-waffle {
+    display: flex;
+    flex-flow: row wrap;
+    margin: -(@o-waffle-spacing / 2);
+    width: ~"calc(100% + @{o-waffle-spacing})";
+}
+
+.o-waffle__item {
+    margin: (@o-waffle-spacing / 2);
+    width: ~"calc((100% / @{o-waffle-columns}) - @{o-waffle-spacing})";
+}

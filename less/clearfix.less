@@ -1,0 +1,29 @@
+/* ==========================================================================
+   #CLEARFIX OBJECT
+   ========================================================================== */
+
+
+/**
+ * Contains floated elements so that the parent does not collapse.
+ *
+ *     <div class="o-clearfix">
+ *         <div style="float:left;">Floated left</div>
+ *         <div style="float:left;">Floated left</div>
+ *         <div style="float:left;">Floated left</div>
+ *     </div>
+ *
+ */
+
+.o-clearfix {
+
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+
+}

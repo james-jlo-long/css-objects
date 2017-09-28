@@ -1,0 +1,39 @@
+@o-media-spacing: 0.5em;
+
+/* ==========================================================================
+   #MEDIA OBJECT
+   ========================================================================== */
+
+
+/**
+ * Aligns text next to an image. The image may be either on the left, the right
+ * or both.
+ *
+ *     <div class="o-media">
+ *         <div class="o-media__left">Left</div>
+ *         <div class="o-media__body">Text</div>
+ *         <div class="o-media__right">Right</div>
+ *     </div>
+ *
+ */
+
+.o-media {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.o-media__left {
+    align-self: flex-start;
+    margin-right: @o-media-spacing;
+}
+
+.o-media__right {
+    align-self: flex-start;
+    margin-left: @o-media-spacing;
+}
+
+.o-media__body {
+    align-self: center;
+    flex-grow: 1;
+}

@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #BOX OBJECT
+   ========================================================================== */
+
+/**
+ * Creates a box with consistent padding around the children.
+ *
+ *     <div class="o-box">
+ *         <p>One</p>
+ *         <p class="o-box__lip">Two (with lip)</p>
+ *         <p>Three</p>
+ *     </div>
+ *
+ */
+
+.o-box {
+    padding: 0.5em;
+}
+
+.o-box > :first-child {
+    margin-top: 0;
+}
+
+.o-box > :last-child {
+    margin-bottom: 0;
+}
+
+.o-box__lip {
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}

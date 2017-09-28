@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #LIST BARE OBJECT
+   ========================================================================== */
+
+
+/**
+ * Removes the list styling from a list.
+ *
+ *     <ul class="o-list-bare">
+ *         <li class="o-list-bare__item">One</li>
+ *         <li class="o-list-bare__item">Two</li>
+ *         <li class="o-list-bare__item">Three</li>
+ *     </ul>
+ *
+ * 1. Prevents whitespace appearing around a block-level child.
+ */
+
+.o-list-bare {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.o-list-bare__item {
+    display: block; /* [1] */
+}
