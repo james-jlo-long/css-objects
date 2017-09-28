@@ -376,7 +376,7 @@ Waffles lay out elements of the same width in a grid pattern. They create a cons
 </div>
 ```
 
-The trick with this object is that the parent has a negative margin equivalent to the children's margin. The width of the parent is 100% plus the margin of both sides; the child's width is the column width (25% for 4 columns in this example) minus the horizontal margins. You _can_ write the child's width at `calc(25% - 0.5em)` but it can be easier to express the desired number of columns by including the actual number there. For example:
+The trick with this object is that the parent has a negative margin equivalent to the children's margin. The width of the parent is 100% plus the margin of both sides; the child's width is the column width (25% for 4 columns in this example) minus the horizontal margins. You _can_ write the child's width as `calc(25% - 0.5em)` but it can be easier to express the desired number of columns by including the actual number there. For example:
 
 ```css
 .o-waffle__item {
@@ -415,9 +415,7 @@ Because of the negative margins, this object can often look strange if things li
 ```html
 <div class="product-wrapper">
     <div class="o-waffle">
-        <div class="o-waffle__item">
-            <!-- ... -->
-        </div>
+        <div class="o-waffle__item">Content</div>
         <!-- ... -->
     </div>
 </div>
@@ -472,9 +470,7 @@ With a CSS structure like this, you can adjust an object using a component or mo
 
 ```html
 <div class="o-waffle c-products">
-    <div class="o-waffle__item c-products__item">
-        <!-- ... -->
-    </div>
+    <div class="o-waffle__item c-products__item">Content</div>
     <!-- ... -->
 </div>
 ```
