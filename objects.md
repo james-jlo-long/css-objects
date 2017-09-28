@@ -17,7 +17,7 @@ A final point before I show these objects is that there is no grid system here. 
 
 ### Box
 
-_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/box.css) | [Demohttp://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html](#box)_
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/box.css) | [Demo](http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html#box)_
 
 A box just squares off content. It removes the top margin from the first child and the bottom margin from the last child so keep the spacing around the content consistent.
 
@@ -71,7 +71,7 @@ When modifying this object, make sure that the lip's `padding-left` and `padding
 
 ### Centre
 
-_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/centre.css) | [Demo](#http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.htmlcentre)_
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/centre.css) | [Demo](http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html#centre)_
 
 This is more of a collection of similar objects rather than a single, tweakable, one. The centre objects just centre the content, either vertically, horizontally or in both directions.
 
@@ -163,7 +163,7 @@ A slight variant of [Centre](#centre) is Centred. This object aligns itself rath
 
 ### Clearfix
 
-_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/clearfix.css) | [Demo](#clhttp://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.htmlearfix)_
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/clearfix.css) | [Demo](http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html#clearfix)_
 
 I rarely use this object anymore because [Pack](#pack) and [Waffle](#waffle) can achieve better results, but I've included the clearfix here for reference. Clearfix will correct a container so that it wraps around floated children.
 
@@ -190,7 +190,7 @@ I rarely use this object anymore because [Pack](#pack) and [Waffle](#waffle) can
 
 ### List Bare
 
-_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/list-bare.css) | [Demo]http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html(#bare)_
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/list-bare.css) | [Demo](http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html#list-bare)_
 
 The list bare object just removes the list styling from a list.
 
@@ -259,7 +259,7 @@ The most useful part of the media object is that the left and right parts are op
 
 ### Pack
 
-_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/pack.css) | [Demo]http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html(#pack)_
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/pack.css) | [Demo](http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html#pack)_
 
 The pack object lines elements next to each other horizontally while also giving some control over the spacing between the elements. Left margin of the first child and right margin of the last child are removed so that the elements touch the edge of the parent.
 
@@ -367,7 +367,7 @@ The Stack object doesn't set any `margin-top` so doesn't need to clear it from t
 
 ### Waffle
 
-_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/waffle.css) | [Demo](#http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.htmlwaffle)_
+_[Source](https://github.com/james-jlo-long/css-objects/blob/master/css/waffle.css) | [Demo](http://htmlpreview.github.io/?https://github.com/james-jlo-long/css-objects/blob/master/demo.html#waffle)_
 
 Waffles lay out elements of the same width in a grid pattern. They create a consistent space between the elements but appear to remove the space around the elements out the outside, possibly allowing them to touch the edge of the container. This is a very useful object for laying out product thumbnails.
 
