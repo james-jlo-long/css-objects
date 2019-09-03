@@ -23,8 +23,9 @@
 .o-pack {
     display: flex;
     flex-direction: row;
-    margin: var(--spacing-negative-values);
-    width: 100%;
+    margin-left: calc(var(--spacing-right) * -1);
+    margin-right: calc(var(--spacing-left) * -1);
+    width: calc(100% + var(--spacing-horizontal-value));
 }
 
 .o-pack__item {

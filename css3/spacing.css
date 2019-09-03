@@ -15,6 +15,8 @@
 .o-pack,
 .o-stack,
 .o-waffle {
+
+    /* Set up the hierarchical values. */
     --spacing: 0px;
     --spacing-horizontal: var(--spacing);
     --spacing-vertical: var(--spacing);
@@ -22,6 +24,8 @@
     --spacing-left: var(--spacing-horizontal);
     --spacing-right: var(--spacing-horizontal);
     --spacing-top: var(--spacing-vertical);
+
+    /* Create some easy-to-reference values that other objects can use. */
     --spacing-values:
         var(--spacing-top)
         var(--spacing-right)
@@ -32,4 +36,7 @@
         calc(var(--spacing-left) * -1)
         calc(var(--spacing-bottom) * -1)
         calc(var(--spacing-right) * -1);
+    --spacing-horizontal-value: calc(var(--spacing-left) + var(--spacing-right));
+    --spacing-vertical-value: calc(var(--spacing-top) + var(--spacing-bottom));
+
 }

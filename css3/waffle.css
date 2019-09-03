@@ -27,10 +27,10 @@
     display: flex;
     flex-flow: row wrap;
     margin: var(--spacing-negative-values);
-    width: calc(100% + 0.5em); /* [2] */
+    width: calc(100% + var(--spacing-horizontal-value));
 }
 
 .o-waffle__item {
     margin: var(--spacing-values);
-    width: calc((100% / 4) - (var(--spacing-left) + var(--spacing-right))); /* [1] */
+    width: calc((100% / 4) - (var(--spacing-horizontal-value))); /* [1] */
 }
