@@ -27,6 +27,11 @@
         var(--spacing-right)
         var(--spacing-bottom)
         var(--spacing-left);
+    --spacing-negative-values:
+        calc(var(--spacing-top) * -1)
+        calc(var(--spacing-left) * -1)
+        calc(var(--spacing-bottom) * -1)
+        calc(var(--spacing-right) * -1);
 }
 
 
@@ -281,11 +286,7 @@
 .o-pack {
     display: flex;
     flex-direction: row;
-    margin:
-        (var(--spacing-top) * -1)
-        (var(--spacing-right) * -1)
-        (var(--spacing-bottom) * -1)
-        (var(--spacing-left) * -1);
+    margin: var(--spacing-negative-values);
     width: 100%;
 }
 
@@ -378,8 +379,8 @@
 .o-stack {
     display: flex;
     flex-direction: column;
-    margin-bottom: (var(--spacing-bottom) * -1);
-    margin-top: (var(--spacing-top) * -1);
+    margin-bottom: calc(var(--spacing-bottom) * -1);
+    margin-top: calc(var(--spacing-top) * -1);
 }
 
 .o-stack__item {
@@ -416,11 +417,7 @@
 .o-waffle {
     display: flex;
     flex-flow: row wrap;
-    margin:
-        (var(--spacing-top) * -1)
-        (var(--spacing-right) * -1)
-        (var(--spacing-bottom) * -1)
-        (var(--spacing-left) * -1);
+    margin: var(--spacing-negative-values);
     width: calc(100% + 0.5em); /* [2] */
 }
 
