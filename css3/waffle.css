@@ -24,13 +24,19 @@
  */
 
 .o-waffle {
+
+    --o-waffle-columns: 4; /* [1] */
+
     display: flex;
     flex-flow: row wrap;
     margin: var(--spacing-negative-values);
     width: calc(100% + var(--spacing-horizontal-value));
+
 }
 
 .o-waffle__item {
     margin: var(--spacing-values);
-    width: calc((100% / 4) - (var(--spacing-horizontal-value))); /* [1] */
+    width: calc(
+        (100% / var(--o-waffle-columns)) - (var(--spacing-horizontal-value))
+    );
 }
