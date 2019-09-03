@@ -1,0 +1,35 @@
+/* ==========================================================================
+   #STACK OBJECT
+   ========================================================================== */
+
+
+/**
+ * Handles objects laid next to one ontop of another. A little like this
+ * (assuming # is an element):
+ *
+ *     +---+
+ *     | # |
+ *     | # |
+ *     | # |
+ *     +---+
+ *
+ *     <div class="o-stack">
+ *         <div class="o-stack__item">One</div>
+ *         <div class="o-stack__item">Two</div>
+ *         <div class="o-stack__item">Three</div>
+ *         <!-- ... -->
+ *     </div>
+ *
+ */
+
+.o-stack {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: calc(var(--spacing-bottom) * -1);
+    margin-top: calc(var(--spacing-top) * -1);
+}
+
+.o-stack__item {
+    margin-bottom: var(--spacing-bottom);
+    margin-top: var(--spacing-top);
+}

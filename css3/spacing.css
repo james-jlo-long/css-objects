@@ -1,0 +1,35 @@
+/* ==========================================================================
+   #SPACING OBJECT
+   ========================================================================== */
+
+/**
+ * Defines spacing in a consistent way, serving as a base for other objects.
+ *
+ * Think of this as an abstract class. It's unlikely that you will use this as
+ * its own class, but it's very useful when extending other objects.
+ */
+
+.o-spacing,
+.o-box,
+.o-media,
+.o-pack,
+.o-stack,
+.o-waffle {
+    --spacing: 0px;
+    --spacing-horizontal: var(--spacing);
+    --spacing-vertical: var(--spacing);
+    --spacing-bottom: var(--spacing-vertical);
+    --spacing-left: var(--spacing-horizontal);
+    --spacing-right: var(--spacing-horizontal);
+    --spacing-top: var(--spacing-vertical);
+    --spacing-values:
+        var(--spacing-top)
+        var(--spacing-right)
+        var(--spacing-bottom)
+        var(--spacing-left);
+    --spacing-negative-values:
+        calc(var(--spacing-top) * -1)
+        calc(var(--spacing-left) * -1)
+        calc(var(--spacing-bottom) * -1)
+        calc(var(--spacing-right) * -1);
+}

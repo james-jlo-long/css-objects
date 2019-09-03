@@ -54,7 +54,18 @@ Just some basic styles to make the objects easier to visualise.
     float: left;
 }
 </style>
-<link rel="stylesheet" href="https://raw.githubusercontent.com/james-jlo-long/css-objects/master/compiled/css.css">
+<!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/james-jlo-long/css-objects/master/compiled/css.css"> -->
+<link rel="stylesheet" href="./compiled/css3.css">
+<style>
+.o-spacing,
+.o-box,
+.o-media,
+.o-pack,
+.o-stack,
+.o-waffle {
+    --spacing: 0.5em;
+}
+</style>
 
 </head>
 <body>
@@ -242,10 +253,12 @@ Just some basic styles to make the objects easier to visualise.
 
     <h2>Pack</h2>
 
-    <div class="o-pack box">
-        <div class="o-pack__item text u-fg">One</div>
-        <div class="o-pack__item text u-fg">Two</div>
-        <div class="o-pack__item text u-fg">Three</div>
+    <div class="box">
+        <div class="o-pack">
+            <div class="o-pack__item text u-fg">One</div>
+            <div class="o-pack__item text u-fg">Two</div>
+            <div class="o-pack__item text u-fg">Three</div>
+        </div>
     </div>
 
     <p><a href="#top">Back to top</a></p>
